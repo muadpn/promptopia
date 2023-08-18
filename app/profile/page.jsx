@@ -15,7 +15,7 @@ const MyProfile = () => {
     const hasConfirmed = confirm(`Are you sure you want to delete?`, post);
     if (hasConfirmed) {
       try {
-        await fetch(`/api/prompt/${post?._id.toString()}`, { method: "DELETE" });
+        await fetch(`/api/prompt/${post._id.toString()}`, { method: "DELETE" });
         fetchPost();
       } catch (e) {
         console.log(e);

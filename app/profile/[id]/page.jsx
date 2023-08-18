@@ -14,7 +14,7 @@ const UserProfile = () => {
   useEffect(() => {
     fetchUserProfile(userId);
   }, []);
-  console.log(post[0]?.creator.username);
+  
   const fetchUserProfile = async (id) => {
     const res = await axios.get(`/api/users/${id}/posts`);
     setPosts(res.data);

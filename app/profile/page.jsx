@@ -22,13 +22,15 @@ const MyProfile = () => {
       }
     }
   };
-  async function fetchPost() {
+  
+  useEffect(() => {
+
+async function fetchPost() {
     const response = await fetch(`/api/users/${session.user.id}/posts`);
     const data = await response.json();
     setPosts(data);
   }
-  useEffect(() => {
-    if (session.user.id) fetchPost();
+ if (session.user.id) fetchPost();
   }, []);
 
   return (

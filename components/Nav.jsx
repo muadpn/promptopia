@@ -50,17 +50,16 @@ const Nav = () => {
           </div>
         ) : (
           <>
-            {providers &&
-              Object.values(providers).map((provider) => (
+           
                 <button
                   type="button"
-                  key={provider.name}
-                  onClick={() => signIn(provider.id)} // used callback function
+                  // key={provider.name}
+                  onClick={() => signIn('google')} // used callback function
                   className="black_btn"
                 >
                   Sign in
                 </button>
-              ))}
+             
           </>
         )}
       </div>

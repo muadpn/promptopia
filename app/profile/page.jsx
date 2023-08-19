@@ -30,8 +30,9 @@ async function fetchPost() {
     const data = await response.json();
     setPosts(data);
   }
- if (session.user.id) fetchPost();
-  }, []);
+
+   session && session.user.id && fetchPost();
+  }, [session]);
 
   return (
     <Profile

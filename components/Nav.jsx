@@ -28,7 +28,7 @@ const Nav = () => {
         <p className="logo_text">Promtopia</p>
       </Link>
       <div className="sm:flex hidden">
-        {session?.user ? (
+        {session && session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Link href="/create-prompt" className="black_btn">
               Create Post
@@ -50,16 +50,14 @@ const Nav = () => {
           </div>
         ) : (
           <>
-           
-                <button
-                  type="button"
-                  // key={provider.name}
-                  onClick={() => signIn('google')} // used callback function
-                  className="black_btn"
-                >
-                  Sign in
-                </button>
-             
+            <button
+              type="button"
+              // key={provider.name}
+              onClick={() => signIn("google")} // used callback function
+              className="black_btn"
+            >
+              Sign in
+            </button>
           </>
         )}
       </div>
